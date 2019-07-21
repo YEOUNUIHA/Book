@@ -4,10 +4,12 @@ spring:
       enabled: true
 
   datasource:
-    url: jdbc:h2:mem:testdb
-#    url: jdbc:h2:file:classpath:/data/demo
+#    url: jdbc:h2:mem:testdb
+    url: jdbc:h2:file:./data/demo
     driverClassName: org.h2.Driver
     username: sa
     password: password
+    sql-script-encoding: UTF-8
+    continue-on-error: true
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect

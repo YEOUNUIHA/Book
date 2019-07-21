@@ -1,7 +1,9 @@
+drop table user_tb
+
 create table USER_TB (
-userid VARCHAR(20) NOT NULL
+userid VARCHAR(30) NOT NULL
 constraint USER_TB_PK primary key ,
-password VARCHAR(40) NOT NULL
+password VARCHAR(50) NOT NULL
 
 );
 
