@@ -1,31 +1,31 @@
 package com.test.book.web;
 
+import com.test.book.dto.UserDto;
 import com.test.book.svc.UserService;
 import com.test.book.domain.User;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-@RestController(value="/user")
+@RestController
 @RequiredArgsConstructor
+@RequestMapping(value="/user")
 public class UserController {
 
     private final UserService userService;
 
-    @GetMapping("")
-    public Boolean login(User user){
+    @PostMapping("/login")
+    public UserDto.loginRes login(@RequestBody User user){
         return userService.login(user);
     }
 
     @PostMapping("")
-    public void postUser(User user){
-        userService.postUser(user);
+    public String postUser(@RequestBody User user){
+        String result = userService.postUser(user);
+        return result;
     }
 
     @PostMapping("/{userid}")
-    public Boolean userIdCheck(@PathVariable String userid){
-        return userService.idCheck(userid);
+    public void userIdCheck(){
+
     }
 }

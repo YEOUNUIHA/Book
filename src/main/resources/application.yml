@@ -13,3 +13,19 @@ spring:
     continue-on-error: true
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+
+server:
+  port: 9000
+  servlet:
+    context-path: /
+    session:
+      timeout: 10m
+
+logging:
+  level:
+    com.test.book: debug
+    org.hibernate.SQL: debug
+    org.hibernate.type.descriptor.sql: trace
+    org.springframework.session.web.http: debug
+    org.springframework.web: info
