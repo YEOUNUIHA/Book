@@ -19,7 +19,7 @@ public class BookService {
 
     private final String URL = "dapi.kakao.com/v3/search/book";
 
-    private final String TOKEN = "KakaoAK ";
+    private final String TOKEN = "KakaoAK 63675067c8b2500a7765b4fb247aab1b";
 
     private HttpEntity<String> httpEntity;
 
