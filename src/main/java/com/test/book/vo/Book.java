@@ -12,6 +12,9 @@ public class Book {
     private String thumbnail;
     private String contents;
     private List<String> authors;
+    private List<String> translators;
+    private String url;
+    private String status;
     private String publisher;
     private String datetime;
     private String price;

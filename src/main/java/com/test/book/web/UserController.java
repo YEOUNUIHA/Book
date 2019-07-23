@@ -6,6 +6,8 @@ import com.test.book.domain.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping(value="/user")
@@ -14,7 +16,7 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping("/login")
-    public UserDto.loginRes login(@RequestBody User user){
+    public UserDto.loginRes login(@Valid @RequestBody User user){
         return userService.login(user);
     }
 

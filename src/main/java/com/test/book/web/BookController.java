@@ -3,11 +3,13 @@ package com.test.book.web;
 import com.test.book.dto.BookDto;
 import com.test.book.svc.BookService;
 import com.test.book.vo.Book;
+import com.test.book.vo.Page;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
@@ -19,7 +21,7 @@ public class BookController {
     private final BookService bookService;
 
     @GetMapping("")
-    public List<Book> searchBooks(BookDto.searchBooksReq searchBooksReq){
+    public Page<Book> searchBooks(@Valid BookDto.searchBooksReq searchBooksReq){
         return bookService.searchBooks(searchBooksReq);
     }
 
